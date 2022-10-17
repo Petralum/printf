@@ -45,7 +45,7 @@ int rot13(va_list list)
 		{
 			if (str[i] == s[x])
 			{
-				_write_char(u[x]);
+				_putchar(u[x]);
 				break;
 			}
 		}
