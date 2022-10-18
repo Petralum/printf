@@ -123,9 +123,7 @@ int print_percent(va_list types, char buffer[],
  */
 
 int print_int(va_list types, char buffer[],
-
 	int flags, int width, int precision, int size)
-
 {
 
 	int i = BUFF_SIZE - 2;
@@ -149,7 +147,6 @@ int print_int(va_list types, char buffer[],
 		num = (unsigned long int)((-1) * n);
 		is_negative = 1;
 	}
-
 
 	while (num > 0)
 	{
@@ -178,7 +175,7 @@ int print_int(va_list types, char buffer[],
  */
 
 int print_binary(va_list types, char buffer[],
-	int flags, int width, int precision, int size);
+	int flags, int width, int precision, int size)
 {
 	unsigned int n, m, i, sum;
 	unsigned int a[32];

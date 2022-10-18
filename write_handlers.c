@@ -125,7 +125,7 @@ int write_num(int ind, char buffer[],
 			return (write(1, &buffer[1], i - 1) + write(1, &buffer[ind], length));
 		}
 		else if (!(flags & F_MINUS) && padd == '0')/* extra char to left of padd */
-
+		{
 			if (extra_c)
 				buffer[--padd_start] = extra_c;
 			return (write(1, &buffer[padd_start], i - padd_start) +
@@ -147,8 +147,9 @@ int write_num(int ind, char buffer[],
  * @precision: Precision specifier
  * @size: Size specifier
  *
- * Return: Number of written chars.
+  Return: Number of written chars.
  */
+
 int write_unsgnd(int is_negative, int ind,
 	char buffer[],
 	int flags, int width, int precision, int size)
@@ -186,6 +187,7 @@ int write_unsgnd(int is_negative, int ind,
 		{
 			return (write(1, &buffer[ind], length) + write(1, &buffer[0], i));
 		}
+
 		else /* Asign extra char to left of padding [padd>buffer]*/
 		{
 			return (write(1, &buffer[0], i) + write(1, &buffer[ind], length));
